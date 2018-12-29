@@ -25,6 +25,19 @@ public class DangNhap extends JFrame {
 	private JButton btnClose;
 	private JButton btnDangNhap;
 	private JButton btnHuy;
+        
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					DangNhap frame = new DangNhap();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public DangNhap() {
             initComponent();

@@ -11,6 +11,7 @@ import giaodienjava.view.PanelNhanVien.pnNhapHang;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -30,6 +31,24 @@ public class NhanVien extends JFrame{
     private pnBaoHanhNV pnbaoHanh;
     private pnHoaDonNV pnhoaDon;
     private pnNhapHang pnnhapHang;
+    private JButton btnMini;
+    private JButton btnClose;
+    private JLabel lblHoaDon;
+    private JLabel lblBaoHanh;
+    private JLabel lblNhapHang;
+    
+    	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					NhanVien frame = new NhanVien();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
     public NhanVien(){
         initComponent();
     }
@@ -52,11 +71,11 @@ public class NhanVien extends JFrame{
 		contentPane.add(pnTop, BorderLayout.NORTH);
 		pnTop.setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 5));
 		
-		JButton btnMini = new JButton("New button");
+		btnMini = new JButton("New button");
 		btnMini.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnTop.add(btnMini);
 		
-		JButton btnClose = new JButton("New button");
+		btnClose = new JButton("New button");
 		pnTop.add(btnClose);
 		
 		JPanel pnCenter = new JPanel();
@@ -69,7 +88,7 @@ public class NhanVien extends JFrame{
 		pnCenter.add(pnMenu);
 		pnMenu.setLayout(null);
 		
-		JLabel lblHoaDon = new JLabel("LẬP HÓA ĐƠN");
+		lblHoaDon = new JLabel("LẬP HÓA ĐƠN");
 		lblHoaDon.setForeground(Color.WHITE);
 		lblHoaDon.setBackground(new Color(0, 51, 51));
 		lblHoaDon.setBounds(0, 0, 135, 45);
@@ -77,14 +96,14 @@ public class NhanVien extends JFrame{
 		lblHoaDon.setHorizontalAlignment(SwingConstants.CENTER);
 		pnMenu.add(lblHoaDon);
 		
-		JLabel lblBaoHanh = new JLabel("BẢO HÀNH");
+		lblBaoHanh = new JLabel("BẢO HÀNH");
 		lblBaoHanh.setForeground(Color.WHITE);
 		lblBaoHanh.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblBaoHanh.setBounds(0, 45, 135, 45);
 		lblBaoHanh.setHorizontalAlignment(SwingConstants.CENTER);
 		pnMenu.add(lblBaoHanh);
 		
-		JLabel lblNhapHang = new JLabel("NHẬP HÀNG");
+		lblNhapHang = new JLabel("NHẬP HÀNG");
 		lblNhapHang.setForeground(Color.WHITE);
 		lblNhapHang.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNhapHang.setBounds(0, 90, 135, 45);

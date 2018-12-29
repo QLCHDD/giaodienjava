@@ -25,6 +25,18 @@ public class ThemNhaCungCap extends JFrame {
 	private JButton btnDongY;
 	private JButton btnHuy;
 
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ThemNhaCungCap frame = new ThemNhaCungCap();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public ThemNhaCungCap() {
             initComponent();

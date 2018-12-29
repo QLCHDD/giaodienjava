@@ -38,6 +38,18 @@ public class ThemNhanVien extends JFrame {
 	private JButton btnThem;
 	private JButton btnHuy;
 
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ThemNhanVien frame = new ThemNhanVien();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 	
 	public ThemNhanVien() {
             initComponent();

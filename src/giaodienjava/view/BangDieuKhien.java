@@ -29,6 +29,18 @@ public class BangDieuKhien extends JFrame {
 	private JButton btnDoiMatKhau;
 	private JButton btnTrangCuaToi;
 
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BangDieuKhien frame = new BangDieuKhien();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public BangDieuKhien() {
             initComponent();

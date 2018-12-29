@@ -38,6 +38,19 @@ public class TimKiemSP extends JFrame {
 	private JScrollPane scrollPaneTableKetQua;
 	private JButton btnHuy;
 	private JButton btnDongY;
+        
+        public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TimKiemSP frame = new TimKiemSP();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public TimKiemSP() {
             initComponent();

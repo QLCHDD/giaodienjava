@@ -23,6 +23,19 @@ public class ThemHang extends JFrame {
 	private JButton btnClose;
 	private JButton btnDongY;
 	private JButton btnHuy;
+        
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ThemHang frame = new ThemHang();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 
 	public ThemHang() {

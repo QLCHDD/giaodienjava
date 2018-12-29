@@ -14,28 +14,15 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.CardLayout;
 import javax.swing.JTextField;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import java.awt.GridLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JSpinner;
 import javax.swing.JSeparator;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.JScrollBar;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JTextArea;
 
 /**
  *

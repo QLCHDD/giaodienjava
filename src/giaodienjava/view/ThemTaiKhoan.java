@@ -18,13 +18,25 @@ import javax.swing.JComboBox;
 public class ThemTaiKhoan extends JFrame {
     
         private JPanel contentPane;
-	private JTextField tfTenTaiKhoan;
-	private JTextField tfMatKhau;
+	private JTextField tfTaiKhoan;
 	private JButton btnMini;
 	private JButton btnClose;
 	private JComboBox cbbPhanQuyen;
 	private JButton btnDongY;
 	private JButton btnHuy;
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ThemTaiKhoan frame = new ThemTaiKhoan();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
 
 	public ThemTaiKhoan() {
 		initComponent();
@@ -32,7 +44,7 @@ public class ThemTaiKhoan extends JFrame {
 
     private void initComponent() {
         	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 470, 368);
+		setBounds(100, 100, 431, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -65,7 +77,7 @@ public class ThemTaiKhoan extends JFrame {
 		
 		JPanel pnThongTin = new JPanel();
 		pnCenter.add(pnThongTin, BorderLayout.CENTER);
-		pnThongTin.setLayout(new GridLayout(4, 1, 0, 0));
+		pnThongTin.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		JPanel pnTenTaiKhoan = new JPanel();
 		FlowLayout fl_pnTenTaiKhoan = (FlowLayout) pnTenTaiKhoan.getLayout();
@@ -74,32 +86,15 @@ public class ThemTaiKhoan extends JFrame {
 		fl_pnTenTaiKhoan.setVgap(10);
 		pnThongTin.add(pnTenTaiKhoan);
 		
-		JLabel lblTenTaiKhoan = new JLabel("Tên tài khoản:");
-		lblTenTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		pnTenTaiKhoan.add(lblTenTaiKhoan);
+		JLabel lblTaiKhoan = new JLabel("Tài khoản:  ");
+		lblTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		pnTenTaiKhoan.add(lblTaiKhoan);
 		
-		tfTenTaiKhoan = new JTextField();
-		tfTenTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		tfTenTaiKhoan.setColumns(20);
-		pnTenTaiKhoan.add(tfTenTaiKhoan);
-		tfTenTaiKhoan.setColumns(20);
-		
-		JPanel pnMatKhau = new JPanel();
-		FlowLayout fl_pnMatKhau = (FlowLayout) pnMatKhau.getLayout();
-		fl_pnMatKhau.setHgap(10);
-		fl_pnMatKhau.setAlignment(FlowLayout.LEFT);
-		fl_pnMatKhau.setVgap(10);
-		pnThongTin.add(pnMatKhau);
-		
-		JLabel lblMatKhau = new JLabel("Mật khẩu:      ");
-		lblMatKhau.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		pnMatKhau.add(lblMatKhau);
-	
-		
-		tfMatKhau = new JTextField();
-		tfMatKhau.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		tfMatKhau.setColumns(20);
-		pnMatKhau.add(tfMatKhau);
+		tfTaiKhoan = new JTextField();
+		tfTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		tfTaiKhoan.setColumns(15);
+		pnTenTaiKhoan.add(tfTaiKhoan);
+		tfTaiKhoan.setColumns(20);
 		
 		JPanel pnPhanQuyen = new JPanel();
 		FlowLayout fl_pnPhanQuyen = (FlowLayout) pnPhanQuyen.getLayout();
@@ -108,7 +103,7 @@ public class ThemTaiKhoan extends JFrame {
 		fl_pnPhanQuyen.setVgap(10);
 		pnThongTin.add(pnPhanQuyen);
 		
-		JLabel lblPhanQuyen = new JLabel("Phân quyền:   ");
+		JLabel lblPhanQuyen = new JLabel("Phân quyền:");
 		lblPhanQuyen.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnPhanQuyen.add(lblPhanQuyen);
 	

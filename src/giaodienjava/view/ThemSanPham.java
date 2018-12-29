@@ -41,6 +41,18 @@ public class ThemSanPham extends JFrame {
 	private JButton btnThem;
 	private JButton btnHuy;
 
+        	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ThemSanPham frame = new ThemSanPham();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public ThemSanPham() {
 		initComponent();
