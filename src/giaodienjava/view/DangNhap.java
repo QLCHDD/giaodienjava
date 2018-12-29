@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -19,28 +21,17 @@ public class DangNhap extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private JButton btnMini;
+	private JButton btnClose;
+	private JButton btnDangNhap;
+	private JButton btnHuy;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					DangNhap frame = new DangNhap();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public DangNhap() {
+            initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public DangNhap() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+    		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 635, 464);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -52,12 +43,12 @@ public class DangNhap extends JFrame {
 		contentPane.add(panel, BorderLayout.NORTH);
 		panel.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton button = new JButton("New button");
-		button.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(button);
+		btnMini = new JButton("New button");
+		btnMini.setHorizontalAlignment(SwingConstants.RIGHT);
+		panel.add(btnMini);
 		
-		JButton button_1 = new JButton("New button");
-		panel.add(button_1);
+		btnClose = new JButton("New button");
+		panel.add(btnClose);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
@@ -107,13 +98,13 @@ public class DangNhap extends JFrame {
 		flowLayout.setHgap(10);
 		panel_4.add(panel_8);
 		
-		JButton button_2 = new JButton("Đăng nhập");
-		button_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel_8.add(button_2);
+		btnDangNhap = new JButton("Đăng nhập");
+		btnDangNhap.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_8.add(btnDangNhap);
 		
-		JButton button_3 = new JButton("Hủy");
-		button_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel_8.add(button_3);
-	}
+		btnHuy = new JButton("Hủy");
+		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_8.add(btnHuy);
+    }
 
 }

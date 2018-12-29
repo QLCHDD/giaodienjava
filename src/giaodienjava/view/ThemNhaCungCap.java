@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -18,28 +20,18 @@ public class ThemNhaCungCap extends JFrame {
 	private JTextField tfTenNCC;
 	private JTextField tfSoDT;
 	private JTextField tfDiaChi;
+	private JButton btnMini;
+	private JButton btnClose;
+	private JButton btnDongY;
+	private JButton btnHuy;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ThemNhaCungCap frame = new ThemNhaCungCap();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+
+	public ThemNhaCungCap() {
+            initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public ThemNhaCungCap() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+        	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 470, 368);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -51,10 +43,10 @@ public class ThemNhaCungCap extends JFrame {
 		contentPane.add(pnTop, BorderLayout.NORTH);
 		pnTop.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton btnMini = new JButton("Mini");
+		btnMini = new JButton("Mini");
 		pnTop.add(btnMini);
 		
-		JButton btnClose = new JButton("Close");
+		btnClose = new JButton("Close");
 		pnTop.add(btnClose);
 		
 		JPanel pnCenter = new JPanel();
@@ -130,13 +122,13 @@ public class ThemNhaCungCap extends JFrame {
 		flowLayout_4.setVgap(10);
 		pnThongTin.add(pnButton);
 		
-		JButton btnDongY = new JButton("Đồng ý");
+		btnDongY = new JButton("Đồng ý");
 		btnDongY.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnDongY);
 		
-		JButton btnHuy = new JButton("Hủy");
+		btnHuy = new JButton("Hủy");
 		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnHuy);
-	}
+    }
 
 }

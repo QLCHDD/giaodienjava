@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -20,28 +22,18 @@ public class DoiMatKhau extends JFrame {
 	private JPasswordField pwfMatKhauCu;
 	private JPasswordField pwfMatKhauMoi;
 	private JPasswordField pwfXacNhanMK;
+	private JButton btnMini;
+	private JButton btnClose;
+	private JButton btnDoiMK;
+	private JButton btnHuy;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					DoiMatKhau frame = new DoiMatKhau();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public DoiMatKhau() {
+            initComponent();
+                    
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public DoiMatKhau() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        private void initComponent() {
+    		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 374, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -53,12 +45,12 @@ public class DoiMatKhau extends JFrame {
 		contentPane.add(panel, BorderLayout.NORTH);
 		panel.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton button = new JButton("New button");
-		button.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(button);
+		btnMini = new JButton("New button");
+		btnMini.setHorizontalAlignment(SwingConstants.RIGHT);
+		panel.add(btnMini);
 		
-		JButton button_1 = new JButton("New button");
-		panel.add(button_1);
+		btnClose = new JButton("New button");
+		panel.add(btnClose);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
@@ -115,13 +107,13 @@ public class DoiMatKhau extends JFrame {
 		flowLayout_3.setHgap(10);
 		panel_1.add(pnButton);
 		
-		JButton btnDoiMK = new JButton("Đổi mật khẩu");
+		btnDoiMK = new JButton("Đổi mật khẩu");
 		btnDoiMK.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnDoiMK);
 		
-		JButton btnHuy = new JButton("Hủy");
+		btnHuy = new JButton("Hủy");
 		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnHuy);
-	}
+    }
 
 }

@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -14,32 +16,22 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JComboBox;
 
 public class ThemTaiKhoan extends JFrame {
-
-	private JPanel contentPane;
+    
+        private JPanel contentPane;
 	private JTextField tfTenTaiKhoan;
 	private JTextField tfMatKhau;
+	private JButton btnMini;
+	private JButton btnClose;
+	private JComboBox cbbPhanQuyen;
+	private JButton btnDongY;
+	private JButton btnHuy;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ThemTaiKhoan frame = new ThemTaiKhoan();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public ThemTaiKhoan() {
+		initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public ThemTaiKhoan() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+        	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 470, 368);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -51,10 +43,10 @@ public class ThemTaiKhoan extends JFrame {
 		contentPane.add(pnTop, BorderLayout.NORTH);
 		pnTop.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton btnMini = new JButton("Mini");
+		btnMini = new JButton("Mini");
 		pnTop.add(btnMini);
 		
-		JButton btnClose = new JButton("Close");
+		btnClose = new JButton("Close");
 		pnTop.add(btnClose);
 		
 		JPanel pnCenter = new JPanel();
@@ -121,7 +113,7 @@ public class ThemTaiKhoan extends JFrame {
 		pnPhanQuyen.add(lblPhanQuyen);
 	
 		
-		JComboBox cbbPhanQuyen = new JComboBox();
+		cbbPhanQuyen = new JComboBox();
 		pnPhanQuyen.add(cbbPhanQuyen);
 		
 		JPanel pnButton = new JPanel();
@@ -131,13 +123,13 @@ public class ThemTaiKhoan extends JFrame {
 		flowLayout_4.setVgap(10);
 		pnThongTin.add(pnButton);
 		
-		JButton btnDongY = new JButton("Đồng ý");
+		btnDongY = new JButton("Đồng ý");
 		btnDongY.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnDongY);
 		
-		JButton btnHuy = new JButton("Hủy");
+		btnHuy = new JButton("Hủy");
 		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnHuy);
-	}
+    }
 
 }

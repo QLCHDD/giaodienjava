@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -5,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
@@ -20,28 +23,19 @@ public class BangDieuKhien extends JFrame {
 	private JTextField tfNgaySinh;
 	private JTextField tfChucVu;
 	private JTextField tfTaiKhoan;
+	private JButton btnMini;
+	private Component btnClose;
+	private JLabel lblHinhAnh;
+	private JButton btnDoiMatKhau;
+	private JButton btnTrangCuaToi;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BangDieuKhien frame = new BangDieuKhien();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+
+	public BangDieuKhien() {
+            initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public BangDieuKhien() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+    		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 794, 433);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -53,12 +47,12 @@ public class BangDieuKhien extends JFrame {
 		contentPane.add(panel, BorderLayout.NORTH);
 		panel.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton button = new JButton("New button");
-		button.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(button);
+		btnMini = new JButton("New button");
+		btnMini.setHorizontalAlignment(SwingConstants.RIGHT);
+		panel.add(btnMini);
 		
-		JButton button_1 = new JButton("New button");
-		panel.add(button_1);
+		btnClose = new JButton("New button");
+		panel.add(btnClose);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
@@ -68,7 +62,7 @@ public class BangDieuKhien extends JFrame {
 		panel_1.add(panel_3);
 		panel_3.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblHinhAnh = new JLabel("Hình Ảnh");
+		lblHinhAnh = new JLabel("Hình Ảnh");
 		lblHinhAnh.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblHinhAnh, BorderLayout.CENTER);
 		
@@ -154,13 +148,13 @@ public class BangDieuKhien extends JFrame {
 		flowLayout_4.setHgap(10);
 		panel_2.add(pnButton);
 		
-		JButton btnDoiMatKhau = new JButton("Đổi mật khẩu");
+		btnDoiMatKhau = new JButton("Đổi mật khẩu");
 		btnDoiMatKhau.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnDoiMatKhau);
 		
-		JButton btnTrangCuaToi = new JButton("Trang của tôi");
+		btnTrangCuaToi = new JButton("Trang của tôi");
 		btnTrangCuaToi.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnTrangCuaToi);
-	}
+    }
 
 }

@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -29,29 +31,23 @@ public class ThemSanPham extends JFrame {
 	private JTextField tfTheNho;
 	private JTextField tfKichThuoc;
 	private JTextField tfNamSX;
-	private JTextField tfLinkHA;
+	private JTextField tfLinkHinhAnh;
+	private JButton btnMini;
+	private JButton btnClose;
+	private JComboBox cbbHang;
+	private JButton btnThemHang;
+        private JLabel lblHinhAnh;
+	private JButton btnLinkHinhAnh;
+	private JButton btnThem;
+	private JButton btnHuy;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ThemSanPham frame = new ThemSanPham();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+
+	public ThemSanPham() {
+		initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public ThemSanPham() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 834, 749);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,10 +59,10 @@ public class ThemSanPham extends JFrame {
 		contentPane.add(pnTop, BorderLayout.NORTH);
 		pnTop.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton btnMini = new JButton("Mini");
+		btnMini = new JButton("Mini");
 		pnTop.add(btnMini);
 		
-		JButton btnClose = new JButton("Close");
+		btnClose = new JButton("Close");
 		pnTop.add(btnClose);
 		
 		JPanel pnCenter = new JPanel();
@@ -119,11 +115,11 @@ public class ThemSanPham extends JFrame {
 		lblHang.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnHang.add(lblHang);
 		
-		JComboBox cbbHang = new JComboBox();
+		cbbHang = new JComboBox();
 		cbbHang.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnHang.add(cbbHang);
 		
-		JButton btnThemHang = new JButton("Thêm mới");
+		btnThemHang = new JButton("Thêm mới");
 		btnThemHang.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnHang.add(btnThemHang);
 		
@@ -248,7 +244,7 @@ public class ThemSanPham extends JFrame {
 		pnThemHinhAnh.add(pnHinhAnh);
 		pnHinhAnh.setLayout(null);
 		
-		JLabel lblHinhAnh = new JLabel("Hình Ảnh");
+		lblHinhAnh = new JLabel("Hình Ảnh");
 		lblHinhAnh.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHinhAnh.setBounds(73, 13, 211, 250);
 		pnHinhAnh.add(lblHinhAnh);
@@ -263,18 +259,18 @@ public class ThemSanPham extends JFrame {
 		flowLayout_9.setHgap(10);
 		pnLinkButton.add(pnLinkHinhAnh);
 		
-		JLabel lblLinkHA = new JLabel("Link hình ảnh:");
-		lblLinkHA.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		pnLinkHinhAnh.add(lblLinkHA);
+		JLabel lblLinkHinhAnh = new JLabel("Link hình ảnh:");
+		lblLinkHinhAnh.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		pnLinkHinhAnh.add(lblLinkHinhAnh);
 		
-		tfLinkHA = new JTextField();
-		tfLinkHA.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		pnLinkHinhAnh.add(tfLinkHA);
-		tfLinkHA.setColumns(13);
+		tfLinkHinhAnh = new JTextField();
+		tfLinkHinhAnh.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		pnLinkHinhAnh.add(tfLinkHinhAnh);
+		tfLinkHinhAnh.setColumns(13);
 		
-		JButton btnNewButton = new JButton("...");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		pnLinkHinhAnh.add(btnNewButton);
+		btnLinkHinhAnh = new JButton("...");
+		btnLinkHinhAnh.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		pnLinkHinhAnh.add(btnLinkHinhAnh);
 		
 		JPanel panel_2 = new JPanel();
 		pnLinkButton.add(panel_2);
@@ -292,13 +288,13 @@ public class ThemSanPham extends JFrame {
 		flowLayout_10.setAlignment(FlowLayout.RIGHT);
 		pnLinkButton.add(pnButton);
 		
-		JButton btnThem = new JButton("Thêm sản phẩm");
+		btnThem = new JButton("Thêm sản phẩm");
 		btnThem.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnThem);
 		
-		JButton btnHuy = new JButton("Hủy");
+		btnHuy = new JButton("Hủy");
 		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnHuy);
-	}
+    }
 
 }

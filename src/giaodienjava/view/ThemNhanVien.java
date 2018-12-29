@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -27,28 +29,22 @@ public class ThemNhanVien extends JFrame {
 	private JTextField tfDiaChi;
 	private JTextField tfNgayVaoLam;
 	private JTextField tfLuongCoBan;
+	private JButton btnMini;
+	private JButton btnClose;
+	private JRadioButton rdbtnNam;
+	private JRadioButton rdbtnNu;
+	private JComboBox cbbTaiKhoan;
+	private JButton btnThemTaiKhoan;
+	private JButton btnThem;
+	private JButton btnHuy;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ThemNhanVien frame = new ThemNhanVien();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
+	public ThemNhanVien() {
+            initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public ThemNhanVien() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+       		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 834, 471);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,10 +56,10 @@ public class ThemNhanVien extends JFrame {
 		contentPane.add(pnTop, BorderLayout.NORTH);
 		pnTop.setLayout(new FlowLayout(FlowLayout.RIGHT, 2, 5));
 		
-		JButton btnMini = new JButton("Mini");
+		btnMini = new JButton("Mini");
 		pnTop.add(btnMini);
 		
-		JButton btnClose = new JButton("Close");
+		btnClose = new JButton("Close");
 		pnTop.add(btnClose);
 		
 		JPanel pnCenter = new JPanel();
@@ -132,11 +128,11 @@ public class ThemNhanVien extends JFrame {
 		lblGioiTinh.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnGioiTinh.add(lblGioiTinh);
 		
-		JRadioButton rdbtnNam = new JRadioButton("Nam           ");
+		rdbtnNam = new JRadioButton("Nam           ");
 		rdbtnNam.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnGioiTinh.add(rdbtnNam);
 		
-		JRadioButton rdbtnNu = new JRadioButton("Nữ");
+		rdbtnNu = new JRadioButton("Nữ");
 		rdbtnNu.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnGioiTinh.add(rdbtnNu);
 		
@@ -244,14 +240,10 @@ public class ThemNhanVien extends JFrame {
 		lblTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnTaiKhoan.add(lblTaiKhoan);
 		
-		JComboBox cbbTaiKhoan = new JComboBox();
+		cbbTaiKhoan = new JComboBox();
 		pnTaiKhoan.add(cbbTaiKhoan);
 		
-		JButton btnThemTaiKhoan = new JButton("Thêm tài khoản");
-		btnThemTaiKhoan.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnThemTaiKhoan = new JButton("Thêm tài khoản");
 		btnThemTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnTaiKhoan.add(btnThemTaiKhoan);
 		
@@ -265,13 +257,13 @@ public class ThemNhanVien extends JFrame {
 		flowLayout_8.setAlignment(FlowLayout.RIGHT);
 		panel_1.add(pnButton);
 		
-		JButton btnThem = new JButton("Đồng ý");
+		btnThem = new JButton("Đồng ý");
 		btnThem.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnThem);
 		
-		JButton btnHuy = new JButton("Hủy");
+		btnHuy = new JButton("Hủy");
 		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnButton.add(btnHuy);
-	}
+    }
 
 }

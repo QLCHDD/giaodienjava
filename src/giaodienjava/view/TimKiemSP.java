@@ -1,3 +1,5 @@
+package giaodienjava.view;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -23,28 +25,26 @@ public class TimKiemSP extends JFrame {
 	private JPanel contentPane;
 	private JTextField tfTenSP;
 	private JTable tableKetQua;
+	private JButton btnMini;
+	private JButton btnTimKiemCoBan;
+	private JComboBox cbbXuatXu;
+	private JRadioButton rdbtnXuatXu;
+	private JButton btnClose;
+	private JRadioButton rdbtnHang;
+	private JComboBox cbbHang;
+	private JRadioButton rdbtnMau;
+	private JComboBox cbbMau;
+	private JButton btnTimKiemNangCao;
+	private JScrollPane scrollPaneTableKetQua;
+	private JButton btnHuy;
+	private JButton btnDongY;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TimKiemSP frame = new TimKiemSP();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public TimKiemSP() {
+            initComponent();
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public TimKiemSP() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void initComponent() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,11 +58,11 @@ public class TimKiemSP extends JFrame {
 		flowLayout.setAlignment(FlowLayout.RIGHT);
 		contentPane.add(pnTop, BorderLayout.NORTH);
 		
-		JButton btnNewButton = new JButton("New button");
-		pnTop.add(btnNewButton);
+		btnMini= new JButton("Mini");
+		pnTop.add(btnMini);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		pnTop.add(btnNewButton_1);
+		btnClose = new JButton("Close");
+		pnTop.add(btnClose);
 		
 		JPanel pnCenter = new JPanel();
 		contentPane.add(pnCenter, BorderLayout.CENTER);
@@ -98,13 +98,12 @@ public class TimKiemSP extends JFrame {
 		pnTimKiemCoBan.add(lblTenSP);
 		
 		tfTenSP = new JTextField();
+		tfTenSP.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		tfTenSP.setBounds(145, 40, 123, 22);
 		pnTimKiemCoBan.add(tfTenSP);
 		tfTenSP.setColumns(10);
 		
-		JButton btnTimKiemCoBan = new JButton("Tìm kiếm");
-		btnTimKiemCoBan.setForeground(new Color(255, 255, 255));
-		btnTimKiemCoBan.setBackground(new Color(0, 51, 51));
+		btnTimKiemCoBan = new JButton("Tìm kiếm");
 		btnTimKiemCoBan.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnTimKiemCoBan.setBounds(303, 39, 97, 25);
 		pnTimKiemCoBan.add(btnTimKiemCoBan);
@@ -122,11 +121,11 @@ public class TimKiemSP extends JFrame {
 		flowLayout_2.setAlignment(FlowLayout.LEFT);
 		panel.add(pnXuatXu);
 		
-		JRadioButton rdbtnXuatXu = new JRadioButton("Xuất xứ:");
+		rdbtnXuatXu = new JRadioButton("Xuất xứ:");
 		rdbtnXuatXu.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnXuatXu.add(rdbtnXuatXu);
 		
-		JComboBox cbbXuatXu = new JComboBox();
+		cbbXuatXu = new JComboBox();
 		pnXuatXu.add(cbbXuatXu);
 		
 		JPanel pnHang = new JPanel();
@@ -136,12 +135,12 @@ public class TimKiemSP extends JFrame {
 		fl_pnHang.setHgap(10);
 		panel.add(pnHang);
 		
-		JRadioButton rdbtnHang = new JRadioButton("Hãng:");
+		rdbtnHang = new JRadioButton("Hãng:");
 		rdbtnHang.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnHang.add(rdbtnHang);
 		
-		JComboBox comboBox = new JComboBox();
-		pnHang.add(comboBox);
+		cbbHang = new JComboBox();
+		pnHang.add(cbbHang);
 		
 		JPanel pnMau = new JPanel();
 		FlowLayout fl_pnMau = (FlowLayout) pnMau.getLayout();
@@ -150,12 +149,12 @@ public class TimKiemSP extends JFrame {
 		fl_pnMau.setHgap(10);
 		panel.add(pnMau);
 		
-		JRadioButton rdbtnMau = new JRadioButton("Màu sắc:");
+		rdbtnMau = new JRadioButton("Màu sắc:");
 		rdbtnMau.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnMau.add(rdbtnMau);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		pnMau.add(comboBox_1);
+		cbbMau = new JComboBox();
+		pnMau.add(cbbMau);
 		
 		JPanel panel_1 = new JPanel();
 		FlowLayout flowLayout_5 = (FlowLayout) panel_1.getLayout();
@@ -164,9 +163,7 @@ public class TimKiemSP extends JFrame {
 		flowLayout_5.setHgap(10);
 		panel.add(panel_1);
 		
-		JButton btnTimKiemNangCao = new JButton("Tìm kiếm");
-		btnTimKiemNangCao.setBackground(new Color(0, 51, 51));
-		btnTimKiemNangCao.setForeground(new Color(255, 255, 255));
+		btnTimKiemNangCao = new JButton("Tìm kiếm");
 		btnTimKiemNangCao.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel_1.add(btnTimKiemNangCao);
 		
@@ -180,24 +177,23 @@ public class TimKiemSP extends JFrame {
 		pnKetQua.add(pnTableKetQua);
 		pnTableKetQua.setLayout(new BorderLayout(0, 0));
 		
-		JScrollPane scrollPaneKetQua = new JScrollPane();
-		pnTableKetQua.add(scrollPaneKetQua, BorderLayout.CENTER);
+		scrollPaneTableKetQua = new JScrollPane();
+		pnTableKetQua.add(scrollPaneTableKetQua, BorderLayout.CENTER);
 		
 		tableKetQua = new JTable();
-		scrollPaneKetQua.setViewportView(tableKetQua);
+		scrollPaneTableKetQua.setViewportView(tableKetQua);
 		
-		JButton btnHuy = new JButton("Hủy");
-		btnHuy.setForeground(new Color(255, 255, 255));
-		btnHuy.setBackground(new Color(0, 51, 51));
+		btnHuy = new JButton("Hủy");
 		btnHuy.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnHuy.setBounds(327, 419, 97, 25);
 		pnKetQua.add(btnHuy);
 		
-		JButton btnDongY = new JButton("Đồng ý");
-		btnDongY.setForeground(new Color(255, 255, 255));
-		btnDongY.setBackground(new Color(0, 51, 51));
+		btnDongY = new JButton("Đồng ý");
 		btnDongY.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnDongY.setBounds(186, 419, 97, 25);
 		pnKetQua.add(btnDongY);
 	}
-}
+    }
+
+        
+        

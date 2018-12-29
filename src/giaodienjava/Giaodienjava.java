@@ -5,6 +5,8 @@
  */
 package giaodienjava;
 
+import java.awt.EventQueue;
+
 /**
  *
  * @author RanRan
@@ -12,10 +14,16 @@ package giaodienjava;
 public class Giaodienjava {
 
     /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 }
